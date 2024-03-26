@@ -1,3 +1,10 @@
+# Extract expressive embedding from Pretssel 
+see line: https://github.com/ga642381/seamless_communication_emo/blob/main/src/seamless_communication/cli/expressivity/predict/predict.py#L161
+
+**emo_embs** is returned. Not that this embedding might contain language embedding. (https://github.com/ga642381/seamless_communication_emo/blob/main/src/seamless_communication/models/generator/vocoder.py#L108)
+
+-----
+
 ![](23-11_SEAMLESS_BlogHero_11.17.jpg)
 # Seamless Intro
 
