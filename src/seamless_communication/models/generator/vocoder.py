@@ -105,7 +105,6 @@ class PretsselEncoderFrontend(Module):
             prosody_input_seqs,
             prosody_padding_mask,
         ).unsqueeze(1)
-
         if self.embed_lang is not None:
             lang_index = self.lang_to_index[tgt_lang]
             lang_index_tensor = (
@@ -570,7 +569,7 @@ class PretsselVocoder(Module):
             h = h[:, :, : _x.size(-1)]
 
             wavs.append(0.8 * h + torch.tanh(skip_output).squeeze(0))
-        return wavs
+        return wavs, cond_embs
 
     def remove_weight_norm(self) -> None:
         i = self.pn_layers + 1

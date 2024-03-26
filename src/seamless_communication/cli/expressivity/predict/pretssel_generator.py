@@ -84,8 +84,8 @@ class PretsselGenerator(Module):
         prosody_input_seqs, prosody_padding_mask = get_seqs_and_padding_mask(
             prosody_encoder_input
         )
-
-        audio_wavs = self.pretssel_model(
+    
+        audio_wavs, emo_embs = self.pretssel_model(
             units_tensor,
             tgt_lang,
             prosody_input_seqs,
@@ -97,4 +97,4 @@ class PretsselGenerator(Module):
             units=units,
             audio_wavs=audio_wavs,
             sample_rate=self.output_sample_rate,
-        )
+        ), emo_embs

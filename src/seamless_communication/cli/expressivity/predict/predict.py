@@ -155,9 +155,10 @@ def main() -> None:
         duration_factor=args.duration_factor,
         prosody_encoder_input=src_gcmvn,
     )
-
+    # I returned emo_embed below, we can decied how to use it.
+    # Note this emo_embs might contain langauge embedding as well. See PretsselEncoderFrontend.
     assert unit_output is not None
-    speech_output = pretssel_generator.predict(
+    speech_output, emo_embs = pretssel_generator.predict(
         unit_output.units,
         tgt_lang=args.tgt_lang,
         prosody_encoder_input=src_gcmvn,
